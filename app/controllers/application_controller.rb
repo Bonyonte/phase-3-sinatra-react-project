@@ -37,4 +37,17 @@ class ApplicationController < Sinatra::Base
       email: params[:email],
       password: params[:password]
     )
+    payload = {
+      studentId: student[:id],
+      first_name: student[:first_name],
+      last_name: student[:last_name],
+      gender: student[:gender],
+      email: student[:email],
+      password: student[:password]
+    }
+    token = JWT.encode payload, nil, 'HS256'
+
+    {token: token}.to_json
+  end
+  
 end
