@@ -6,4 +6,10 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  get "/students" do 
+    student = Student.all.order(:created_at)
+    student.to_json
+  end
+
+  
 end
