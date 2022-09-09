@@ -11,5 +11,30 @@ class ApplicationController < Sinatra::Base
     student.to_json
   end
 
-  
+  get "/students/:id" do 
+    lesson = Student.find(params[:id])
+    lesson.to_json(include: lessons)
+  end
+
+  get "/lessons/:id" do 
+    teacher = Lesson.find(params[:id])
+    teacher.to_json(include: :teachers)
+  end
+
+  post "/signup" do
+
+    if params[:first_name].empty? || params[:last_name].empty? || params[:email].empty? || params[:password].empty?
+      return {statusCode: 400, message: "Fill in all the fields"}.to_json
+    elsif Student.find_by(email: params[:email])
+      return {statusCode: 409, message: "Student #{params[:email]} already exists"}.to_json
+    elsif params[:password].length < 6
+      return {statusCode: 409, message: "Password must be atleast 6 characters or more."}.to_json
+    end
+    student = Student.create(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      gender: params[:gender],
+      email: params[:email],
+      password: params[:password]
+    )
 end
