@@ -13,5 +13,15 @@ puts "🌱 Seeding spices..."
     rand(1..10).times do
         student = Student.order('RANDOM()').first 
 
-        
+        Lesson.create( 
+            lesson_name: Faker::Name.name,
+            lesson_teacher: Faker::Name.unique.name,
+            progress: Faker::Boolean.boolean,
+            teacher_id: teacher_id)
+        end
+
+        rand(1..12).times do
+            lesson = Lesson.order('RANDOM()').first
+
+            
 puts "✅ Done seeding!"
