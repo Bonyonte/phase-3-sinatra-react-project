@@ -92,4 +92,12 @@ class ApplicationController < Sinatra::Base
     )
     update_teacher.to_json
   end
+
+  delete "/lessons/:id" do
+    lesson = Lesson.find(params[:id])
+     lesson.destroy 
+     lesson.to_json
+  end
+
+  
 end
