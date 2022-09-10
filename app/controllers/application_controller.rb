@@ -69,4 +69,13 @@ class ApplicationController < Sinatra::Base
     new_teacher.to_json
   end
 
+  patch "/student/:id" do 
+    update_student = Student.find(params[:id])
+    update_student.update( 
+      password: params[:password]
+    )
+    update_student.to_json
+  end
+
+
 end
