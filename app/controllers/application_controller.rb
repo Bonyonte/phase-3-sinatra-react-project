@@ -85,4 +85,11 @@ class ApplicationController < Sinatra::Base
     update_lesson.to_json 
   end
 
+  patch "/teachers/:id" do
+    updtate_teacher = Teacher.find(params[:id])
+    updtate_teacher.update( 
+      teacher_email: params[:teacher_email]
+    )
+    update_teacher.to_json
+  end
 end
