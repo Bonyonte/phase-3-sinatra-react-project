@@ -50,4 +50,15 @@ class ApplicationController < Sinatra::Base
     {token: token}.to_json
   end
   
+  post "/lessons" do 
+    new_lesson = Lesson.create( 
+      lesson_name: params[:lesson_name],
+      lesson_teacher: params[:lesson_teacher],
+      progress: params[:progress],
+      teacher_id: params[:teacher_id]
+    )
+    new_lesson.to_json 
+  end
+
+  
 end
