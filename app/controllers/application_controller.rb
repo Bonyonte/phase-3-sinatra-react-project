@@ -36,6 +36,7 @@ class ApplicationController < Sinatra::Base
       return {statusCode: 409, message: "Password must be atleast 6 characters or more."}.to_json
     end
     student = Student.create(
+      student_image: params[:student_image],
       first_name: params[:first_name],
       last_name: params[:last_name],
       gender: params[:gender],
@@ -44,6 +45,7 @@ class ApplicationController < Sinatra::Base
     )
     payload = {
       studentId: student[:id],
+      student_image:student[:student_image],
       first_name: student[:first_name],
       last_name: student[:last_name],
       gender: student[:gender],

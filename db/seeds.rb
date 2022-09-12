@@ -15,6 +15,7 @@ puts "🌱 Seeding spices..."
         student = Student.order('RANDOM()').first 
 
         Teacher.create( 
+            teacher_image:Faker::LoremFlickr.image,
             teacher_name: Faker::Name.name,
             teacher_email:Faker::Internet.email,
             lesson_id: rand(1..10))
