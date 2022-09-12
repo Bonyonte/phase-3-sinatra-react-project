@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
     student.to_json
   end
 
+  get "/teachers" do 
+    teacher = Teacher.all.order(:created_at)
+    teacher.to_json
+  end
+
   get "/students/:id" do 
     lesson = Student.find(params[:id])
     lesson.to_json(include: lessons)
@@ -104,5 +109,5 @@ class ApplicationController < Sinatra::Base
     teacher.destroy 
     teacher.to_json
   end
-  
+
 end

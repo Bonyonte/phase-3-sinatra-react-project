@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_09_162540) do
+ActiveRecord::Schema.define(version: 2022_09_12_082323) do
 
   create_table "lessons", force: :cascade do |t|
     t.string "lesson_name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_09_09_162540) do
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "student_image"
   end
 
   create_table "teachers", force: :cascade do |t|

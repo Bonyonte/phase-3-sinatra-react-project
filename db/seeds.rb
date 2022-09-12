@@ -3,6 +3,7 @@ puts "🌱 Seeding spices..."
 # Seed your database here
 10.times do 
     Student.create(
+        student_image:Faker::LoremFlickr.image, 
         first_name: Faker::Name.name,
         last_name: Faker::Name.unique.name,
         gender: Faker::Gender.binary_type,
