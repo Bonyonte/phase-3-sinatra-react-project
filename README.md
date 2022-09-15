@@ -2,9 +2,9 @@ STUDY WEBSITE By -Godfrey Magogo Bonyonte
 
 Screenshot
 
-![images](/app/images/Screenshot%20from%202022-09-12%2023-53-39.png)
-![images](/app/images/Screenshot%20from%202022-09-12%2023-53-33.png)
-![images](/app/images/Screenshot%20from%202022-09-12%2023-54-01.png)
+![images](/models/images/Screenshot%20from%202022-09-12%2023-53-39.png)
+![images](/models/images/Screenshot%20from%202022-09-12%2023-53-33.png)
+![images](/models/images/Screenshot%20from%202022-09-12%2023-54-01.png)
 
 
 Table Of Content
@@ -24,6 +24,7 @@ Table Of Content
 -Author's Info
 
 Description 
+
 This platform is allows one see the registered number of students in a certain school so that as a parent you can be able to understand different teachers and their lessons in that institution. In future, the platform will allow students, teachers to login and register. 
 
 Features
